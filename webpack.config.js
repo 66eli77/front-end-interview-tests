@@ -8,10 +8,14 @@ module.exports = {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader' },
       { test: /\.vue$/, loader: 'vue'},
-      { test: /\.styl$/, loader: 'style-loader!css-loader?sourceMap!postcss-loader!stylus-loader' }
+      { test: /\.styl$/, loader: 'style-loader!css-loader?sourceMap!postcss-loader!stylus-loader' },
+      { test: /muse-ui.src.*?js$/, loader: 'babel' }
     ]
   },
   resolve: {
+    alias: {
+      'muse-components': 'muse-ui/src'
+    },
     extensions: ["", ".vue", ".js"],
   },
   vue: {
