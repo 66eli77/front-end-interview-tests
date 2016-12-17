@@ -47,7 +47,6 @@
     },
     methods: {
       getDataByAjax() {
-        console.log('eeeelllii:: ', this.city);
         if (this.city) {
           const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + this.city + '&appid=' + this.apiKey;
           const xhr = new XMLHttpRequest();

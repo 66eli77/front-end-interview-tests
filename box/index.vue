@@ -2,7 +2,7 @@
 
   <div id="wrapper">
     <p id="title"> CityTemp </p>
-    <widget v-for="(item, index) in items" :itemIndex="index" :key="item.id"/>
+    <widget v-for="(item, index) in items" :itemIndex="index"/>
   </div>
 
 </template>
