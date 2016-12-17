@@ -30,6 +30,11 @@
 <script>
 
   const bus = require('../bus');
+  var data = {
+    apiKey: '645a8bfda0ec12d2f37bd56e8d6f5004',
+    city: null,
+    temp: 0,
+  }
 
   module.exports = {
     props: {
@@ -37,13 +42,12 @@
         type: Number
       }
     },
-    data: () => ({
-      apiKey: '645a8bfda0ec12d2f37bd56e8d6f5004',
-      city: null,
-      temp: 0,
-    }),
+    data: () => {
+      return data;
+    },
     methods: {
       getDataByAjax() {
+        console.log('eeeelllii:: ', this.city);
         if (this.city) {
           const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + this.city + '&appid=' + this.apiKey;
           const xhr = new XMLHttpRequest();
