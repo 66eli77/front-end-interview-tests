@@ -5,9 +5,11 @@ This is a little widget that allows you to add locations from a list of cities a
 Tasks:
 ------
 
-1. fix all widgets displaying the same data issue (reference: https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function)
+1. fix Kelvin to Celsius conversion issue to round to 2 decimal places.
 
-2. fix deleting the correct widget issue (reference: https://vuejs.org/v2/guide/list.html)
+2. fix all widgets displaying the same data issue (reference: https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function)
+
+3. fix deleting the correct widget issue (reference: https://vuejs.org/v2/guide/list.html)
 
 
 How to set up

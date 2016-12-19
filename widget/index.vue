@@ -65,7 +65,7 @@
     },
     computed: {
       kelvinToCelsius() {
-        return this.temp ? (this.temp - 273.15).toFixed(2) : 0;
+        return this.temp ? this.temp - 273.15 : 0;
       }
     },
   };
