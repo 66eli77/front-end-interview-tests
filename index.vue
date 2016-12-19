@@ -12,6 +12,7 @@
 
 <script>
 
+  // A central event bus defined in bus.js for Non Parent_Child communication.
   const bus = require('./bus');
 
   module.exports = {

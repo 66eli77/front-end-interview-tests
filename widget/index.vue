@@ -1,7 +1,7 @@
 <template>
 
   <div class="box">
-    <select v-model="city" @:change="getDataByAjax">
+    <select v-model="city" @change="getDataByAjax">
       <option>Amsterdam</option>
       <option>Ankara</option>
       <option>Beijing</option>
@@ -29,7 +29,9 @@
 
 <script>
 
+  // A central event bus defined in bus.js for Non Parent_Child communication.
   const bus = require('../bus');
+  
   var data = {
     apiKey: '645a8bfda0ec12d2f37bd56e8d6f5004',
     city: null,
