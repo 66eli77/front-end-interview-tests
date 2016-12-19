@@ -1,7 +1,7 @@
 <template>
 
   <div class="box">
-    <select v-model="city" v-on:change="getDataByAjax">
+    <select v-model="city" @:change="getDataByAjax">
       <option>Amsterdam</option>
       <option>Ankara</option>
       <option>Beijing</option>
