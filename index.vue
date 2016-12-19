@@ -20,12 +20,11 @@
       'box': require('./box'),
     },
     data: () => ({
-      uniqueId: 0,
-      items: [{id: 0}],
+      items: [1],
     }),
     methods: {
       add() {
-        this.items.push({id: ++this.uniqueId});
+        this.items.push(1);
       },
     },
     created() {
