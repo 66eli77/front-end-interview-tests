@@ -1,14 +1,10 @@
 <template>
 
-  <div class="top-container">
-    <div id="add" @click="changeStates">
-      <div id="text">👆</div>
-    </div>
-    <h4>root</h4>
+  <div class="container">
+    <h4>component-1</h4>
     <p>{{ states }}</p>
     <p>{{ state1 }}</p>
     <p>{{ state2 }}</p>
-    <comp/>
   </div>
 
 </template>
@@ -17,9 +13,6 @@
 <script>
 
   module.exports = {
-    components: {
-      'comp': require('./comp'),
-    },
     computed: {
       states() {
         if (this.$store.state.state2) {
@@ -45,11 +38,6 @@
         }
       },
     },
-    methods: {
-      changeStates() {
-        this.$store.dispatch('mAction', true);
-      },
-    },
   };
 
 </script>
@@ -57,39 +45,17 @@
 
 <style lang="stylus" scoped>
 
-  @require 'theme.styl'
+  @require '../theme.styl'
   
-  .top-container
+  .container
     top: 100px
     position: relative
-    background-color: $background-color
+    background-color: #ffbaba
     min-width: 320px
     padding: 4px
     width: 400px
     margin: auto
     @media (max-width: $portrait-breakpoint)
       width: 100%
-  
-  #add
-    background-color: #8cedff
-    width: 40px
-    height: 40px
-    border-radius: 20px
-    position: absolute
-    display: table
-    top: -15px
-    right: 20px
-    float: right
-    cursor:pointer
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-  #text
-    color: $color
-    font-weight: bold
-    font-size: 150%
-    display: table-cell
-    vertical-align: middle
-    text-align: center
-    no-selete()
 
 </style>
