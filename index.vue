@@ -1,10 +1,12 @@
 <template>
 
   <div class="top-container">
-    <div id="add" @click="add">
-      <div id="text">+</div>
+    <div id="add" @click="changeStates">
+      <div id="text">👆</div>
     </div>
-    <box :items="items"/>
+    <p>{{ states }}</p>
+    <p>{{ state1 }}</p>
+    <p>{{ state2 }}</p>
   </div>
 
 </template>
@@ -12,25 +14,36 @@
 
 <script>
 
-  const bus = require('./bus');
-
   module.exports = {
-    components: {
-      'box': require('./box'),
-    },
-    data: () => ({
-      uniqueId: 0,
-      items: [{id: 0}],
-    }),
-    methods: {
-      add() {
-        this.items.push({id: ++this.uniqueId});
+    computed: {
+      states() {
+        if (this.$store.state.state2) {
+          return 'state2 first';
+        }
+        if (this.$store.state.state1) {
+          return 'state1 first';
+        }
+        return 'states lol';
+      },
+      state1() {
+        if (this.$store.state.state1) {
+          return 'state1 changed';
+        } else {
+          return 'state1 lol';
+        }
+      },
+      state2() {
+        if (this.$store.state.state2) {
+          return 'state2 changed';
+        } else {
+          return 'state2 lol';
+        }
       },
     },
-    created() {
-      bus.$on('delete', (index) => {
-        this.items.splice(index, 1);
-      });
+    methods: {
+      changeStates() {
+        this.$store.dispatch('mAction', true);
+      },
     },
   };
 
@@ -44,6 +57,7 @@
   .top-container
     top: 100px
     position: relative
+    background-color: $background-color
     min-width: 320px
     padding: 4px
     width: 400px
@@ -52,7 +66,7 @@
       width: 100%
   
   #add
-    background-color: $action-color
+    background-color: #8cedff
     width: 40px
     height: 40px
     border-radius: 20px
