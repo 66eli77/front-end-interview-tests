@@ -1,8 +1,8 @@
 <template>
 
   <div id="wrapper">
-    <p id="title"> CityTemp </p>
-    <widget v-for="(item, index) in items" :itemIndex="index"/>
+    <p id="title"> {{ total }} Cit{{ total>1 ? 'ies' : 'y' }} </p>
+    <widget v-for="(item, index) in items" :itemIndex="index" :key="item.id"/>
   </div>
 
 </template>
@@ -19,6 +19,9 @@
         type: Array
       }
     },
+    data: () => ({
+      total: this.items.length,
+    }),
   };
 
 </script>

@@ -5,11 +5,13 @@ This is a little widget that allows you to add locations from a list of cities a
 Tasks:
 ------
 
-1. fix Kelvin to Celsius conversion issue to round to 2 decimal places.
+1. fix the console error that prevents the page from rendering. (tip: data property itself is not reactive, meaning `data: () => ({ myData: myVaule })` if `myVaule` changed, `myData` won't reflect the change)
 
-2. fix all widgets displaying the same data issue (reference: https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function)
+2. fix Kelvin to Celsius conversion issue to round to 2 decimal places.
 
-3. fix deleting the correct widget issue (reference: https://vuejs.org/v2/guide/list.html)
+3. fix all widgets displaying the same data issue (reference: https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function)
+
+4. fix deleting the correct widget issue (reference: https://vuejs.org/v2/guide/list.html)
 
 
 How to set up
