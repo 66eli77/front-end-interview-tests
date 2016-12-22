@@ -1,7 +1,7 @@
 <template>
 
   <div id="wrapper">
-    <p id="title"> CityTemp </p>
+    <p id="title"> {{ total }} Cit{{ total>1 ? 'ies' : 'y' }} </p>
     <widget v-for="(item, index) in items" :itemIndex="index" :key="item.id"/>
   </div>
 
@@ -17,6 +17,11 @@
     props: {
       items: {
         type: Array
+      }
+    },
+    computed: {
+      total() {
+        return this.items.length;
       }
     },
   };
